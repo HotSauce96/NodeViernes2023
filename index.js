@@ -1,21 +1,11 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 
-//Listado de los servicios
-app.post('/registrarhabitacion', function (req, res) {
-  res.send('estamos registrando la habitacion')
-})
+import {API} from './API.js'
 
-app.get('/buscarhabitaciones', function (req, res) {
-    res.send('estamos buscando todas las habitaciones')
-})
 
-app.get('/buscarhabitacion', function (req, res) {
-    res.send('estamos buscando 1 habitacion')
-})
+let servidor= new API()
 
-app.put('/actualizarhabitacion', function (req, res) {
-    res.send('estamos actualizando 1 habitacion')
-})
+//1. DESPERTAMOS LA BESTIA
+servidor.despertarServidor()
 
-app.listen(3000,function(){
-    console.log("Servidor encendido...")
-})
