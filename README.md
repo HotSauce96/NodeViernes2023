@@ -1,6 +1,6 @@
 # Proyecto HotelWeek hecho en NodeJS 
 
-**Parte del backend hecho en NodeJS y simulado sus peticiones en Postman.**
+**Parte del backend hecho en NodeJS y simulando sus peticiones en Postman.**
 
 # Etiquetas: 	
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
