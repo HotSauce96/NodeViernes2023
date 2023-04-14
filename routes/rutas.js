@@ -7,10 +7,10 @@ let controladorHabitacion= new ControladorHabitaciones()
 //utilizare un metodo especial de EXPRESS
 export let rutas=express.Router()
 
-rutas.post('/registrarhabitacion',controladorHabitacion.registarndoHabitacion)
+rutas.post('/registrarhabitacion',controladorHabitacion.registrandoHabitacion)
 rutas.get('/buscarhabitaciones',controladorHabitacion.buscandoTodasHabitaciones)
 rutas.get('/buscarhabitacion/:idhabitacion',controladorHabitacion.buscandoUnaHabitacion)
-rutas.put('/actualizarhabitacion/:idhabitacioones',controladorHabitacion.editandoHabitacion)
+rutas.put('/actualizarhabitacion/:idhabitacion',controladorHabitacion.editandoHabitacion)
 
 //
 //

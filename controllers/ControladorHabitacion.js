@@ -2,11 +2,8 @@ export class ControladorHabitaciones{
 
     constructor(){}
 
-    registarndoHabitacion(peticion,respuesta){
-
+    registrandoHabitacion(peticion,respuesta){
         let datosHabitacion=peticion.body
-        console.log(datosHabitacion)
-
         try{
             respuesta.status(200).json({
                 "mensaje":"Exito agregando los datos"
@@ -44,6 +41,8 @@ export class ControladorHabitaciones{
     }
 
     editandoHabitacion(peticion,respuesta){
+        let idHabitacion=peticion.params.idhabitacion
+        let datosHabitacion=peticion.body
         try{
             respuesta.status(200).json({
                 "mensaje":"Exito editando la habitacion"
