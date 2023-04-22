@@ -6,6 +6,6 @@ import {API} from './API.js'
 
 let servidor= new API()
 
-//1. DESPERTAMOS LA BESTIA
+//1. DESPERTAMOS EL SERVIDOR
 servidor.despertarServidor()
 
