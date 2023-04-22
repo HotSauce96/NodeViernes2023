@@ -6,7 +6,7 @@ export async function establecerConexion(){
         console.log("Exito conectandonos a BD")
 
     }catch(error){
-        console.log("fallamos en la conexion a bd "+error)
+        console.log("fallamos en la conexion a bd" + error)
 
     }
 }

@@ -1,8 +1,9 @@
-import mongoose, { mongo } from 'mongoose'
+import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;
 
 //construimos el esquema persdonalizando la informacion
+
 const Habitacion=new Schema({
     nombre:{
         type:String,
@@ -26,4 +27,4 @@ const Habitacion=new Schema({
     }
 })
 
-export const modeloHabitacion=mongoose.model('habitacion',Habitacion)
+export const modeloHabitacion = mongoose.model('habitacion',Habitacion)

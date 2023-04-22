@@ -5,8 +5,13 @@ export class ControladorHabitaciones{
     constructor(){}
 
     async registrandoHabitacion(peticion,respuesta){
+
         let datosHabitacion=peticion.body
+
+console.log(datosHabitacion)
+
         let servicioHabitacion=new ServicioHabitaciones()
+
         try{
             await servicioHabitacion.registrarHabitacion(datosHabitacion)
             respuesta.status(200).json({
@@ -14,7 +19,7 @@ export class ControladorHabitaciones{
             })
         }catch(errorPeticion){
             respuesta.status(400).json({
-                "mensaje":"Fallamos "+errorPeticion
+                "mensaje":"No se ha podido registrar la habitación, error:  "+ errorPeticion
             })
         }
     }
@@ -24,7 +29,7 @@ export class ControladorHabitaciones{
         let servicioHabitacion= new ServicioHabitaciones()
         try{
             respuesta.status(200).json({
-                "mensaje":"Exito buscando la habitacion "+idHabitacion,
+                "mensaje":"Exito buscando la habitacion "+ idHabitacion,
                 "habitacion":await servicioHabitacion.buscarHabitacion(idHabitacion)
 
             })
