@@ -7,7 +7,9 @@ export class ServicioHabitaciones{
     async registrarHabitacion(datosHabitacion){
 
         let habitacionNueva=new modeloHabitacion(datosHabitacion)
+        console.log(habitacionNueva)        
         return await habitacionNueva.save()
+        
 
     }
     async buscarTodasHabitaciones(){

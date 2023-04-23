@@ -8,8 +8,6 @@ export class ControladorHabitaciones{
 
         let datosHabitacion=peticion.body
 
-console.log(datosHabitacion)
-
         let servicioHabitacion=new ServicioHabitaciones()
 
         try{
@@ -25,8 +23,11 @@ console.log(datosHabitacion)
     }
 
     async buscandoUnaHabitacion(peticion,respuesta){
+
         let idHabitacion=peticion.params.idhabitacion
+
         let servicioHabitacion= new ServicioHabitaciones()
+
         try{
             respuesta.status(200).json({
                 "mensaje":"Exito buscando la habitacion "+ idHabitacion,
@@ -41,7 +42,9 @@ console.log(datosHabitacion)
     }
 
     async buscandoTodasHabitaciones(peticion,respuesta){
+
         let servicioHabitacion=new ServicioHabitaciones()
+
         try{
             respuesta.status(200).json({
 
@@ -56,9 +59,13 @@ console.log(datosHabitacion)
     }
 
     async editandoHabitacion(peticion,respuesta){
+
         let idHabitacion=peticion.params.idhabitacion
+
         let datosHabitacion=peticion.body
+
         let servicioHabitacion= new ServicioHabitaciones()
+
         try{
             await servicioHabitacion.editarHabitacion(idHabitacion,datosHabitacion)
             respuesta.status(200).json({

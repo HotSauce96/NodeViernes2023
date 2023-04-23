@@ -21,7 +21,7 @@ const Habitacion=new Schema({
         type:Number,
         required:true
     },
-    cantidadmaxima:{
+    cantidadMaxima:{
         type:Number,
         required:true
     }
