@@ -41,8 +41,8 @@ export class ControladorReservas{
 
     async buscandoReserva(peticion,respuesta){
 
-        let idReserva = peticion.params.idReserva
-
+        let idReserva =peticion.params.idreserva
+            console.log(idReserva)
         let servicioReserva=new ServicioReservas()
 
         try{

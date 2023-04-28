@@ -29,8 +29,8 @@ const Reserva =new Schema({
         type:Number,
         required:true
     },
-    idHabitacionReserva:{
-        type:Number,
+    idHabitacion:{
+        type:String,
         required:true
     },
 })
