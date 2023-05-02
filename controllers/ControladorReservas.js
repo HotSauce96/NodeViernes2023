@@ -9,8 +9,13 @@ export class ControladorReservas{
         let datosReserva=peticion.body
 
         let servicioReserva=new ServicioReservas()
+	let servicioHabitaciones = new ServicioHabitaciones()
 
         try{
+		// Validacion que la habitacion existe para poder hacer la reserva.
+		
+	    let habitacion = await servicioHabitaciones.buscarHabitacion(datosReserva, idHabitacion)
+	    
             await servicioReserva.registrarReserva(datosReserva)
             respuesta.status(200).json({
                 "mensaje":"Exito agregando los datos"
