@@ -33,6 +33,10 @@ const Reserva =new Schema({
         type:String,
         required:true
     },
+    costoReserva: {
+        type: Number,
+        required: false
+    }
 })
 
 export const modeloReserva = mongoose.model('reserva',Reserva)

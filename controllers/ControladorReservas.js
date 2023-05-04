@@ -1,4 +1,5 @@
 import { ServicioReservas } from "../services/ServicioReservas.js"
+import { ServicioHabitaciones} from "../services/ServicioHabitaciones.js"
 
 export class ControladorReservas{
 
@@ -9,20 +10,36 @@ export class ControladorReservas{
         let datosReserva=peticion.body
 
         let servicioReserva=new ServicioReservas()
-	let servicioHabitaciones = new ServicioHabitaciones()
+	    let servicioHabitaciones = new ServicioHabitaciones()
 
         try{
 		// Validacion que la habitacion existe para poder hacer la reserva.
 		
-	    let habitacion = await servicioHabitaciones.buscarHabitacion(datosReserva, idHabitacion)
+	    let habitacion = await servicioHabitaciones.buscarHabitacion(datosReserva.idHabitacion)
+
+            if(habitacion){
+                let restaDias = new Date(datosReserva.fechaFinal).getTime() - new Date(datosReserva.fechaInicio).getTime()
+                if(restaDias >= 0){ 
+                    let diasDiferencia = restaDias / 1000 / 60 / 60 / 24
+                    datosReserva.costoReserva = diasDiferencia * habitacion.precioNoche
+                    await servicioReserva.registrarReserva(datosReserva)
+                    respuesta.status(200).json({
+                        "mensaje":"Exito agregando los datos"
+                    })
+                } else {
+                    respuesta.status(400).json({
+                        "mensaje":"Fecha inválida, no se puede viajar al pasado"
+                    })
+                }
+            }else{
+                respuesta.status(400).json({
+                    "mensaje":"No se puede reservar una habitación que no existe"
+                })
+            }
 	    
-            await servicioReserva.registrarReserva(datosReserva)
-            respuesta.status(200).json({
-                "mensaje":"Exito agregando los datos"
-            })
         }catch(errorPeticion){
             respuesta.status(400).json({
-                "mensaje":"Fallamos "+errorPeticion
+                "mensaje":"Fallamos "+ errorPeticion
             })
         }
     }
