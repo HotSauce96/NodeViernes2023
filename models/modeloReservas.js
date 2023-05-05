@@ -30,9 +30,14 @@ const Reserva =new Schema({
         required:true
     },
     idHabitacionReserva:{
-        type:Number,
+        type:String,
         required:true
     },
+    costoReserva: {
+        type: Number,
+        required: false
+    }
 })
 
 export const modeloReserva = mongoose.model('reserva',Reserva)
+

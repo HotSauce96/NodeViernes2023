@@ -49,11 +49,11 @@ export class ControladorHabitaciones{
             respuesta.status(200).json({
 
                 "mensaje":"Exito buscando habitaciones",
-                "habitaciones":await servicioHabitacion.buscarTodasHabitaciones()
+                "habitaciones": await servicioHabitacion.buscarTodasHabitaciones()
             })
         }catch(errorPeticion){
             respuesta.status(400).json({
-                "mensaje":"Fallamos "+errorPeticion
+                "mensaje":"Fallamos "+ errorPeticion
             })
         }
     }
