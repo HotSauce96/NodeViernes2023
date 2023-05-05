@@ -9,8 +9,6 @@ export class ServicioHabitaciones{
         let habitacionNueva=new modeloHabitacion(datosHabitacion)
         console.log(habitacionNueva)        
         return await habitacionNueva.save()
-        
-
     }
     async buscarTodasHabitaciones(){
         let habitacionesConsultadas=await modeloHabitacion.find()

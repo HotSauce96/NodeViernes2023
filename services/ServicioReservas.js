@@ -16,8 +16,9 @@ export class ServicioReservas{
         return reservasConsultadas
     }
     async buscarReserva(idReserva){
+        console.log(idReserva)
         let reservaConsultada=await modeloReserva.findById(idReserva)
-        console.log(reservaConsultada)
+        //console.log(reservaConsultada)
         return reservaConsultada
     }
     async editarReservas(idReserva,datosReserva){

@@ -33,6 +33,7 @@ export class ControladorReservas{
 
 //Operacion cálculo diasDiferencia por el precio de la habitacion 
 
+
                     datosReserva.costoReserva = diasDiferencia * habitacion.precioNoche
 
                 console.log("El precio de la habitacion según la cantidad de personas es de " + datosReserva.costoReserva);
@@ -107,7 +108,7 @@ export class ControladorReservas{
         try{
             await servicioReserva.editarReservas (idReserva,datosReserva)
             respuesta.status(200).json({
-                "mensaje":"Exito editando la habitacion"
+                "mensaje":"Exito editando la reserva"
             })
         }catch(errorPeticion){
             respuesta.status(400).json({
