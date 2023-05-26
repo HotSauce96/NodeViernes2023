@@ -1,5 +1,6 @@
 import express from 'express'
 import {rutas} from './routes/rutas.js'
+import cors from 'cors'
 import { establecerConexion } from './database/conexion.js'
 
 export class API{
@@ -12,6 +13,7 @@ export class API{
         this.app.listen(3000,()=>console.log("Servidor encendido..."))
     }
     enrutarPeticiones(){
+        this.app.use(cors())
         this.app.use(express.json()) //habilitamos la recepcion de datos desde el body de la peticion
         this.app.use('/',rutas) //habilitamos las rutas o endpoints
     }
