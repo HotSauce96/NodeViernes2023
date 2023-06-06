@@ -17,10 +17,10 @@ export class API{
 // habilitamos la recepción de datos desde el body de la petición
         this.app.use(express.json()) //habilitamos la recepcion de datos desde el body de la peticion
  // Configuración de CORS
-        this.app.use(function (req, res, next) {
-        res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-        next();
-        });
+        //this.app.use(function (req, res, next) {
+        //res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        //next();
+        //});
 // Enrutamientos o Endpoints
         this.app.use('/',rutas) //habilitamos las rutas o endpoints
     }
